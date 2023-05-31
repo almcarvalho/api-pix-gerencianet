@@ -37,7 +37,7 @@ app.get('/', async (req, res) => {
   res.render('qrcode', { qrcodeImage: qrcodeResponse.data.imagemQrcode })
 });
 
-app.get('/cobrancas', async(req, res) => {
+app.get('/cobrancas', async (req, res) => {
   const reqGN = await reqGNAlready;
 
   const cobResponse = await reqGN.get('/v2/cob?inicio=2021-02-15T16:01:35Z&fim=2021-02-22T23:59:00Z');
@@ -45,8 +45,9 @@ app.get('/cobrancas', async(req, res) => {
   res.send(cobResponse.data);
 });
 
-app.post('/webhook(/pix)?', (req, res) => {
+app.post('/integracao-video-2', (req, res) => {
   console.log(req.body);
+  //mandar uma mensagem la (aplicação do rafal)
   res.send('200');
 });
 
